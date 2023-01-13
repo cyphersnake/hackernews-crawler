@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package hackernews_proxy;
+
+message Empty {}
+
+message Timestamp {
+  int64 timestmap = 1;
+}
+
+message StringWrapper {
+  string str = 1;
+}
+
+message Post {
+  int64 post_id                  = 1;
+  string title                   = 2;
+  string author                  = 3;
+  string url                     = 5;
+  StringWrapper link             = 6;
+  Timestamp publication_moment   = 7;
+  Timestamp last_snapshot_moment = 8;
+}
+
+message TopPostRequest {
+}
+
+message AtFirstPageFilter {
+  oneof at_first_page {
+    Empty     all_time = 4;
+  }
+}
+
+message UserPostRequest {
+    string user               = 1;
+    oneof filter {
+      // Show all users post
+      // from service database
+      Empty all               = 2;
+      // Show users ports presented at some point in time on the first page
+      Empty was_at_first_page = 3;
+    }
+}
+
+service PostService {
+    rpc GetTopPosts (TopPostRequest) returns (stream Post);
+    rpc GetUserPosts (UserPostRequest) returns (stream Post);
+}

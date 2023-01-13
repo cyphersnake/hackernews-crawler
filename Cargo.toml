@@ -1,0 +1,42 @@
+[package]
+name = "hackernews-crawler"
+version = "0.0.0"
+authors = ["cyphersnake <cyphersnake@pm.me>"]
+edition = "2021"
+
+[[bin]]
+name = "server"
+path = "src/server/main.rs"
+
+[[bin]]
+name = "client"
+path = "src/client.rs"
+
+[dependencies]
+anyhow = "1.0.68"
+async-trait = "0.1.61"
+chrono = "0.4.23"
+futures = "0.3.25"
+prost = "0.10.4"
+reqwest = "0.11.13"
+sqlx = { version = "0.6.2", features = ["sqlite", "runtime-tokio-native-tls", "chrono"] }
+strum = { version = "0.24.1", features = ["derive"] }
+thiserror = "1.0.38"
+tokio = { version = "1.24.1", features = ["full"] }
+tracing = "0.1.37"
+tracing-subscriber = "0.3.16"
+url = "2.3.1"
+voyager = "0.2.1"
+tonic = { version = "0.7.2", features = [ "transport", "tls"] }
+tokio-stream = "0.1.11"
+confique = "0.2.2"
+serde = "1.0.152"
+rand = "0.8.5"
+clap = { version = "4.1.1", features = ["derive"] }
+
+[build-dependencies]
+prost-build = "0.11.6"
+tonic-build = "0.7.2"
+
+[dev-dependencies]
+tonic-mock = "0.1.0"
