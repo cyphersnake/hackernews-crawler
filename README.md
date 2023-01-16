@@ -1,23 +1,29 @@
 # Tech task
+
 You should implement a web crawler for Hacker News. Crawl the first 10 pages of Hacker News and store enough information to be able to respond to the following through some APIs:
-1.    List of top posts.
-2.    List of posts sent by a user.
-3.    List of posts of a user that was on the first page at some point.
+
+1. List of top posts
+2. List of posts sent by a user
+3. List of posts of a user that was on the first page at some point
+
  
-DO NOT spend too much time on this question (max 4-5 hours). This question is open ended. What we are curious to see is your use of:
-1.    Database use
-2.    API design
-3.    Concurrency
-4.    Testing
-5.    Containerisation and ease of deployment
+ DO NOT spend too much time on this question (max 4-5 hours). This question is open ended. What we are curious to see is your use of:
+ 
+ 1.  Database use
+ 2.  API design
+ 3.  Concurrency
+ 4.  Testing
+ 5.  Containerisation and ease of deployment
  
+ 
 It is not necessary to have a finished project, but it should be at a state where we can reliably get signals for above and to know that you are experienced in topics that will be needed during the job.
  
 For example, there's no need to have significant coverage, but we expect to see sort of mocking during some test.
  
-Requirements:
-1. Use Rust.
-2. Use a relational database.
+ 
+ Requirements:
+ 1. Use Rust.
+ 2. Use a relational database.
  
 # Solution
 ## Cralwer
